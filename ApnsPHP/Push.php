@@ -100,6 +100,7 @@ class ApnsPHP_Push extends ApnsPHP_Abstract
 			$nMessageID = $nMessageQueueLen + $i + 1;
 			$this->_aMessageQueue[$nMessageID] = array(
 				'MESSAGE' => $message,
+                'RECIPIENT' => $i,
 				'BINARY_NOTIFICATION' => $this->_getBinaryNotification(
 					$message->getRecipient($i),
 					$sMessagePayload,
